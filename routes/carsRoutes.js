@@ -1,22 +1,16 @@
 import express from 'express'
-// import {getAllCars, getCarById, createCar, updateCar, deleteCar} from '../controllers/carsControllers.js'
-import * as controller from "../controllers/carsControllers.js"
+import * as carsControls from '../controllers/carsControllers.js'
 
 const router = express.Router()
 
-// router.get("/", getAllCars)
-router.get("/", controller.getAllCars)
+router.get('/cars', carsControls.getAllCars)
 
-// router.get("/:id", getCarById)
-router.get("/:id", controller.getCarById)
+router.get('/cars/:id', carsControls.getCarById)
 
-// router.post("/", createCar)
-router.post("/", controller.createCar)
+router.post('/cars', carsControls.createCar)
 
-// router.put("/:id", updateCar)
-router.put("/:id", controller.updateCar)
+router.put('/cars/:id', carsControls.updateCar)
 
-// router.delete("/:id", deleteCar)
-router.delete("/:id", controller.deleteCar)
+router.delete('/cars/:id', carsControls.deleteCar)
 
 export default router
